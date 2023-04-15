@@ -1,178 +1,190 @@
 import {
-  Box,
-  Button,
+  Container,
   Flex,
+  Box,
+  Heading,
+  Text,
+  IconButton,
+  Button,
+  VStack,
+  HStack,
+  Wrap,
+  WrapItem,
   FormControl,
   FormLabel,
-  Heading,
-  IconButton,
   Input,
   InputGroup,
   InputLeftElement,
-  Link,
-  Stack,
   Textarea,
-  Tooltip,
-  useClipboard,
   useColorModeValue,
-  VStack,
 } from "@chakra-ui/react";
-import React from "react";
-import { BsGithub, BsLinkedin, BsPerson, BsTwitter } from "react-icons/bs";
-import { MdEmail, MdOutlineEmail } from "react-icons/md";
+import {
+  MdPhone,
+  MdEmail,
+  MdLocationOn,
+  MdFacebook,
+  MdOutlineEmail,
+} from "react-icons/md";
+import { BsGithub, BsDiscord, BsPerson } from "react-icons/bs";
 import { TextUnderline } from "../TextUnderline";
 
 export default function Contact() {
-  const { hasCopied, onCopy } = useClipboard("example@example.com");
-
   return (
-    <Flex
-      bg={useColorModeValue("gray.100", "gray.900")}
-      align="center"
-      justify="center"
-      id="contact"
-    >
-      <Box
-        borderRadius="lg"
-        m={{ base: 5, md: 16, lg: 10 }}
-        p={{ base: 5, lg: 16 }}
+    <Box bg={useColorModeValue("gray.50", "gray.900")} id={"section_contact"}>
+      <Container
+        maxW={"7xl"}
+        mt={0}
+        centerContent
+        overflow="hidden"
+        py={{ base: 14, sm: 20, md: 32 }}
       >
-        <Box>
-          <VStack spacing={{ base: 4, md: 8, lg: 20 }}>
-            <Heading as={"h3"} textAlign={"center"}>
-              Get In <TextUnderline>Touch</TextUnderline>
-            </Heading>
-
-            <Stack
-              spacing={{ base: 4, md: 8, lg: 20 }}
-              direction={{ base: "column", md: "row" }}
-            >
-              <Stack
-                align="center"
-                justify="space-around"
-                direction={{ base: "row", md: "column" }}
-              >
-                <Tooltip
-                  label={hasCopied ? "Email Copied!" : "Copy Email"}
-                  closeOnClick={false}
-                  hasArrow
-                >
-                  <IconButton
-                    aria-label="email"
-                    variant="ghost"
-                    size="lg"
-                    fontSize="3xl"
-                    icon={<MdEmail />}
-                    _hover={{
-                      bg: "blue.500",
-                      color: useColorModeValue("white", "gray.700"),
-                    }}
-                    onClick={onCopy}
-                    isRound
-                  />
-                </Tooltip>
-
-                <Link href="#">
-                  <IconButton
-                    aria-label="github"
-                    variant="ghost"
-                    size="lg"
-                    fontSize="3xl"
-                    icon={<BsGithub />}
-                    _hover={{
-                      bg: "blue.500",
-                      color: useColorModeValue("white", "gray.700"),
-                    }}
-                    isRound
-                  />
-                </Link>
-
-                <Link href="#">
-                  <IconButton
-                    aria-label="twitter"
-                    variant="ghost"
-                    size="lg"
-                    icon={<BsTwitter size="28px" />}
-                    _hover={{
-                      bg: "blue.500",
-                      color: useColorModeValue("white", "gray.700"),
-                    }}
-                    isRound
-                  />
-                </Link>
-
-                <Link href="#">
-                  <IconButton
-                    aria-label="linkedin"
-                    variant="ghost"
-                    size="lg"
-                    icon={<BsLinkedin size="28px" />}
-                    _hover={{
-                      bg: "blue.500",
-                      color: useColorModeValue("white", "gray.700"),
-                    }}
-                    isRound
-                  />
-                </Link>
-              </Stack>
-
-              <Box
-                bg={useColorModeValue("white", "gray.700")}
-                borderRadius="lg"
-                p={8}
-                color={useColorModeValue("gray.700", "whiteAlpha.900")}
-                shadow="base"
-              >
-                <VStack spacing={5}>
-                  <FormControl isRequired>
-                    <FormLabel>Name</FormLabel>
-
-                    <InputGroup>
-                      <InputLeftElement children={<BsPerson />} />
-                      <Input type="text" name="name" placeholder="Your Name" />
-                    </InputGroup>
-                  </FormControl>
-
-                  <FormControl isRequired>
-                    <FormLabel>Email</FormLabel>
-
-                    <InputGroup>
-                      <InputLeftElement children={<MdOutlineEmail />} />
-                      <Input
-                        type="email"
-                        name="email"
-                        placeholder="Your Email"
+        <Heading as={"h3"} textAlign={"center"} mb={{ base: 14, sm: 16 }}>
+          Get In <TextUnderline>Touch</TextUnderline>
+        </Heading>
+        <Flex>
+          <Box
+            bg={useColorModeValue("white", "gray.800")}
+            color="white"
+            borderRadius="lg"
+            m={{ sm: 4, md: 16, lg: 10 }}
+            p={{ sm: 5, md: 5, lg: 16 }}
+          >
+            <Box p={4}>
+              <Wrap spacing={{ base: 20, sm: 3, md: 5, lg: 20 }}>
+                <WrapItem>
+                  <Box>
+                    <Heading color={useColorModeValue("gray.900", "white")}>
+                      Contact
+                    </Heading>
+                    <Text
+                      mt={{ sm: 3, md: 3, lg: 5 }}
+                      color={useColorModeValue("gray.900", "gray.500")}
+                    >
+                      Silakan Hubungi Contact Di Bawah ini!
+                    </Text>
+                    <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
+                      <VStack pl={0} spacing={3} alignItems="flex-start">
+                        <Button
+                          size="md"
+                          height="48px"
+                          width="200px"
+                          variant="ghost"
+                          color={useColorModeValue("gray.900", "#DCE2FF")}
+                          _hover={{ border: "2px solid #1C6FEB" }}
+                          leftIcon={<MdPhone color="#1970F1" size="20px" />}
+                        >
+                          +62 813-1149-6194
+                        </Button>
+                        <Button
+                          size="md"
+                          height="48px"
+                          width="260px"
+                          variant="ghost"
+                          color={useColorModeValue("gray.900", "#DCE2FF")}
+                          _hover={{ border: "2px solid #1C6FEB" }}
+                          leftIcon={<MdEmail color="#1970F1" size="20px" />}
+                        >
+                          muhamadsyabaini@gmail.com
+                        </Button>
+                        <Button
+                          size="md"
+                          height="48px"
+                          width="260px"
+                          variant="ghost"
+                          color={useColorModeValue("gray.900", "#DCE2FF")}
+                          _hover={{ border: "2px solid #1C6FEB" }}
+                          leftIcon={
+                            <MdLocationOn color="#1970F1" size="20px" />
+                          }
+                        >
+                          Pemalang, Indonesia - 52362
+                        </Button>
+                      </VStack>
+                    </Box>
+                    <HStack
+                      mt={{ lg: 10, md: 10 }}
+                      spacing={5}
+                      px={5}
+                      alignItems="flex-start"
+                    >
+                      <IconButton
+                        aria-label="facebook"
+                        variant="outline"
+                        size="lg"
+                        isRound={true}
+                        _hover={{ bg: "#DCE2FF" }}
+                        icon={<MdFacebook size="28px" color="#1970F1" />}
                       />
-                    </InputGroup>
-                  </FormControl>
-
-                  <FormControl isRequired>
-                    <FormLabel>Message</FormLabel>
-
-                    <Textarea
-                      name="message"
-                      placeholder="Your Message"
-                      rows={6}
-                      resize="none"
-                    />
-                  </FormControl>
-
-                  <Button
-                    colorScheme="blue"
-                    bg="blue.400"
-                    color="white"
-                    _hover={{
-                      bg: "blue.500",
-                    }}
-                  >
-                    Send Message
-                  </Button>
-                </VStack>
-              </Box>
-            </Stack>
-          </VStack>
-        </Box>
-      </Box>
-    </Flex>
+                      <IconButton
+                        aria-label="github"
+                        variant="outline"
+                        size="lg"
+                        isRound={true}
+                        _hover={{ bg: "#DCE2FF" }}
+                        icon={<BsGithub size="28px" color="#1970F1" />}
+                      />
+                      <IconButton
+                        aria-label="discord"
+                        variant="outline"
+                        size="lg"
+                        isRound={true}
+                        _hover={{ bg: "#DCE2FF" }}
+                        icon={<BsDiscord size="28px" color="#1970F1" />}
+                      />
+                    </HStack>
+                  </Box>
+                </WrapItem>
+                <WrapItem>
+                  <Box bg="white" borderRadius="lg">
+                    <Box m={8} color="#0B0E3F">
+                      <VStack spacing={5}>
+                        <FormControl id="name">
+                          <FormLabel>Your Name</FormLabel>
+                          <InputGroup borderColor="#E0E1E7">
+                            <InputLeftElement pointerEvents="none">
+                              <BsPerson color="gray.800" />
+                            </InputLeftElement>
+                            <Input type="text" size="md" />
+                          </InputGroup>
+                        </FormControl>
+                        <FormControl id="name">
+                          <FormLabel>Mail</FormLabel>
+                          <InputGroup borderColor="#E0E1E7">
+                            <InputLeftElement pointerEvents="none">
+                              <MdOutlineEmail color="gray.800" />
+                            </InputLeftElement>
+                            <Input type="text" size="md" />
+                          </InputGroup>
+                        </FormControl>
+                        <FormControl id="name">
+                          <FormLabel>Message</FormLabel>
+                          <Textarea
+                            borderColor="gray.300"
+                            _hover={{
+                              borderRadius: "gray.300",
+                            }}
+                            placeholder="message"
+                          />
+                        </FormControl>
+                        <FormControl id="name" float="right">
+                          <Button
+                            variant="solid"
+                            bg="#0D74FF"
+                            color="white"
+                            _hover={{}}
+                          >
+                            Send Message
+                          </Button>
+                        </FormControl>
+                      </VStack>
+                    </Box>
+                  </Box>
+                </WrapItem>
+              </Wrap>
+            </Box>
+          </Box>
+        </Flex>
+      </Container>
+    </Box>
   );
 }
