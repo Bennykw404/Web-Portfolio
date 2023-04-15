@@ -62,7 +62,7 @@ export default function Contact() {
                     >
                       Silakan Hubungi Contact Di Bawah ini!
                     </Text>
-                    <Box py={{ base: 5, sm: 5, md: 8, lg: 10 }}>
+                    <Box pt={{ base: 5, sm: 5, md: 8, lg: 10 }}>
                       <VStack pl={0} spacing={3} alignItems="flex-start">
                         <Button
                           size="md"
