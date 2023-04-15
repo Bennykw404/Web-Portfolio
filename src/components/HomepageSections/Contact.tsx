@@ -36,7 +36,7 @@ export default function Contact() {
         mt={0}
         centerContent
         overflow="hidden"
-        py={{ base: 14, sm: 20, md: 32 }}
+        pt={{ base: 14, sm: 20, md: 32 }}
       >
         <Heading as={"h3"} textAlign={"center"} mb={{ base: 14, sm: 16 }}>
           Get In <TextUnderline>Touch</TextUnderline>
