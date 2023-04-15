@@ -37,7 +37,7 @@ export const projects: Project[] = [
     category: "Misc",
     desc: "Simple App with Authentication",
     link: {
-      demo: "http://tfkhdyt-todo-list.vercel.app/",
+      demo: null,
       github: "https://github.com/Bennykw404/App_Laundry",
     },
     tech: ["VB.Net"],
